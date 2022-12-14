@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 dotenv.config();
 import express from "express";
-import countryRoutes from "./routes/restaurant";
+import restaurantRoutes from "./routes/restaurant";
 import "./lib/db";
 
 const app = express();
@@ -16,8 +16,8 @@ app.get("/api", async (req, res) => {
   res.json({ message: "Please visit /countries to view all the countries" });
 });
 
-app.use("/api/restaurants", countryRoutes);
+app.use("/api/restaurants", restaurantRoutes);
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+  console.log(`Restaurant app listening at http://localhost:${port}`);
 });
